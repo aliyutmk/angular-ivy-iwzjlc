@@ -1,0 +1,93 @@
+<div *ngIf="!firstName; else reginfo">
+  <form [formGroup]="vaccineForm" (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <div class="grid-1">
+      <div class="col-md-6 offset-md-3">
+        <h1>Vaccination Registration Form</h1>
+      </div>
+        <div>
+          <label
+            >First name:
+            <p style="line-height:1.4">
+              <input
+                type="text"
+                placeholder="first name"
+                formControlName="firstName"
+                required minlength="4" 
+              />
+            </p>
+            <div *ngIf="firstName.errors?.['minlength']"></div>
+          </label>
+        </div>
+
+        <div>
+          <label
+            >Surname:
+            <p style="line-height:1.4">
+              <input
+                type="text"
+                placeholder="surname"
+                formControlName="surName" required  minlength="4"
+              />
+            </p>
+            <div *ngIf="surName.errors?.['minlength']"></div>
+          </label>
+        </div>
+
+        <div>
+          <label
+            >Email:
+            <p style="line-height:1.4">
+              <input type="email" placeholder="email" formControlName="eMail" />
+            </p>
+          </label>
+        </div>
+
+        <div>
+          <label
+            >Phone number:
+            <p style="line-height:1.4">
+              <input
+                type="tel"
+                placeholder="xxx-xxx-xxxx"
+                formControlName="phoneNumber"
+                required
+                maxlength="12"
+              />
+            </p>
+          </label>
+        </div>
+
+        <div>
+          <label
+            >Birthday:
+            <p style="line-height:1.4">
+              <input
+                type="date"
+                placeholder="birthDay"
+                formControlName="birthDay"
+              />
+            </p>
+          </label>
+        </div>
+
+        <div style="text-align:center">
+          <input
+            type="submit"
+            class="button expanded"
+            value="Submit form"
+            [disabled]="!vaccineForm.valid"
+          />
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #reginfo>
+  <div class="form-container">
+    <div class="row columns">
+      <h1>{{ firstName }}</h1>
+    </div>
+  </div>
+</ng-template>

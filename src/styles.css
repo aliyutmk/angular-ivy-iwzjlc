@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+@import url('https://fronts.googleapis.com/css?family=Multi:400,700');
+
+body{
+    background: #e8e8e8;
+    font-family: 'Muli';
+}
