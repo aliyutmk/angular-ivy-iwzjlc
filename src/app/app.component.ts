@@ -29,8 +29,7 @@ export class AppComponent  {
       'surName': ['', Validators.required],
       'eMail': ['', Validators.required],
       'phoneNumber': ['', Validators.required],
-      'birthDay': ['', Validators.required],
-      'validate' : ''
+      'birthDay': ['', Validators.required]
     });
   }
 

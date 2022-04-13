@@ -2,79 +2,77 @@
   <form [formGroup]="vaccineForm" (ngSubmit)="onSubmit()">
     <div class="form-container">
       <div class="grid-1">
-      <div class="col-md-6 offset-md-3">
-        <h1>Vaccination Registration Form</h1>
-      </div>
-        <div>
-          <label
-            >First name:
-            <p style="line-height:1.4">
-              <input
-                type="text"
-                placeholder="first name"
-                formControlName="firstName"
-                required minlength="4" 
-              />
-            </p>
-            <div *ngIf="firstName.errors?.['minlength']"></div>
-          </label>
+        <div class="header">
+          <h4>Vaccination Registration Form</h4>
         </div>
-
-        <div>
-          <label
-            >Surname:
-            <p style="line-height:1.4">
-              <input
-                type="text"
-                placeholder="surname"
-                formControlName="surName" required  minlength="4"
-              />
-            </p>
-            <div *ngIf="surName.errors?.['minlength']"></div>
-          </label>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="First name"
+            id="floatingTextarea"
+            formControlName="firstName"
+            required
+            minlength="4"
+          />
+          <div *ngIf="firstName.errors?.['minlength']"></div>
         </div>
+        <br />
 
-        <div>
-          <label
-            >Email:
-            <p style="line-height:1.4">
-              <input type="email" placeholder="email" formControlName="eMail" />
-            </p>
-          </label>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Last name"
+            id="floatingTextarea"
+            formControlName="surName"
+            minlength="4"
+            required
+          />
+          <div *ngIf="surName.errors?.['minlength']"></div>
         </div>
+        <br />
 
-        <div>
-          <label
-            >Phone number:
-            <p style="line-height:1.4">
-              <input
-                type="tel"
-                placeholder="xxx-xxx-xxxx"
-                formControlName="phoneNumber"
-                required
-                maxlength="12"
-              />
-            </p>
-          </label>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="email"
+            placeholder="email"
+            id="floatingTextarea"
+            formControlName="eMail"
+            required
+          />
         </div>
+        <br />
 
-        <div>
-          <label
-            >Birthday:
-            <p style="line-height:1.4">
-              <input
-                type="date"
-                placeholder="birthDay"
-                formControlName="birthDay"
-              />
-            </p>
-          </label>
+        <div class="form-floating">
+          <input
+            class="form-control"
+            type="tel"
+            placeholder="Phone Number"
+            id="floatingTextarea"
+            formControlName="phoneNumber"
+            required
+            maxlength="12"
+          />
         </div>
-
-        <div style="text-align:center">
+        <br />
+        <div class="form-floating mb-3">
+          <label for="floatingInput">D.O.B(Date Of Birth)</label>
+          <input
+            class="form-control"
+            id="floatingInput"
+            type="date"
+            placeholder="Date of birth"
+            formControlName="birthDay"
+            required
+          />
+        </div>
+        <br />
+        <div class="col-12" style="text-align:center">
           <input
             type="submit"
-            class="button expanded"
+            class="btn btn-primary mb-3"
             value="Submit form"
             [disabled]="!vaccineForm.valid"
           />

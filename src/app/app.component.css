@@ -1,10 +1,10 @@
 .form-container {
-  display: block;
   width: 40%;
   padding: 2em;
   margin: 2em auto;
   background: #fff;
   text-align: justify;
+  font-weight: solid;
 }
 
 .ng-invalid:not(form) {
@@ -13,18 +13,19 @@
 
 label {
   display: block;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .button {
   margin-top: 2rem;
   text-align: center;
-  max-width: 300px;
-}h1 {
-  margin-bottom: 2rem;
+  max-width: 600px;
+}
+h1 {
+  text-align: center;
   font-weight: bold;
   font-family: 'Muli';
   font-size: 2em;
-  text-align: center;
+
   color: #264d73;
 }
